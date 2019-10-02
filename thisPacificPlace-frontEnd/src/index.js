@@ -3,9 +3,10 @@ const usersURL = `http://localhost:3000/users`
 const photosURL = `http://localhost:3000/photos`
 const foodsURL = `http://localhost:3000/foods`
 const activitiesURL = `http://localhost:3000/activities`
+const currencyCalcApi = `https://api.exchangeratesapi.io/latest?base=USD&symbols=PHP`
+let city;      
+// let cityWeatherApi = `https://openweathermap.org/data/2.5/weather?q=${city},ph&appid=edda09851305206e712dc2a0a1f040c9`
 // const cityWithFood = "http://localhost:3000/cities/"
-
-const queryURL = "https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20woeid%20%3D%202487889&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys/";
 
 
 const cityList = document.getElementById('list-group');
@@ -30,9 +31,9 @@ const activityDescription = document.createElement('p')
 
 document.addEventListener('DOMContentLoaded', event => {
    
-  displayWeather(queryURL);                                                
+ 
 
-
+  currencyCalc()
   fetch(citiesURL)
    .then(resp => resp.json())
    .then(cityData => {
@@ -51,6 +52,10 @@ document.addEventListener('DOMContentLoaded', event => {
            cityList.appendChild(li)
 
            li.addEventListener('click', event => {
+            city = oneCity.name
+            console.log(city)
+            
+
             //  console.log("my click", li.innerText)
             activityDetail.innerText = ""
             listOfActivity.innerText = ""
@@ -61,7 +66,8 @@ document.addEventListener('DOMContentLoaded', event => {
             cityDetail.appendChild(cityImg)
             
             displayFoodPhoto(oneCity);
-            displayActivities(oneCity);     
+            displayActivities(oneCity);
+            weatherFetching(oneCity);     
            })
        }
    }
@@ -106,96 +112,123 @@ document.addEventListener('DOMContentLoaded', event => {
           }
         }
       })
+      
    }
-  
-   function displayActivities(oneCity) {
+    
+    function displayActivities(oneCity) {
 
-    fetch(activitiesURL)
-    .then(resp => resp.json())
-      .then(activityData => {
-        // console.log('activity DATA :', activityData)
-        
-        let activityh2 = document.createElement('h2')
-        activityh2.innerText = "ACTIVITIES"
-        activityDetail.appendChild(activityh2)
-
-        for (let singleActivity of activityData) {
-          // console.log("Single Activity", singleActivity)
-          if (singleActivity.city_id === oneCity.id) {
-            let activityName = document.createElement('li')
-            activityName.innerText = singleActivity.name
-            listOfActivity.appendChild(activityName)
-            activityDetail.appendChild(listOfActivity)
-            
-            
-            
-            
-            activityName.addEventListener('click', event => {
-                
-                displayActivityPhoto(singleActivity)
-                singleActivityDetail.appendChild(activityPhoto)
-                singleActivityDetail.appendChild(activityDescription)
-                listOfActivity.appendChild(singleActivityDetail)
-                activityName.appendChild(singleActivityDetail)
-                
-              })
-
-            
-            
-          }
-        }
-      })
-   }
-
-   function displayActivityPhoto(singleActivity) {
-    //  console.log("photo: ", singleActivity)
-
-    fetch(photosURL)
-    .then(resp => resp.json())
-    .then(photoData => {
-        for (let singlePhotoData of photoData) {
-
-          if (singlePhotoData.activity_id === singleActivity.id) {
-            
-            activityDescription.innerText = singleActivity.description 
-            activityPhoto.src = singlePhotoData.image_url
-
-
-           
-          
-
-          }
-        }
-    })
-   }
-
-
-   function displayWeather(queryURL) {
-      fetch(queryURL)
+      fetch(activitiesURL)
       .then(resp => resp.json())
-      .then(datas => {
-        console.log("mydata ", datas)
+        .then(activityData => {
+          // console.log('activity DATA :', activityData)
+          
+          let activityh2 = document.createElement('h2')
+          activityh2.innerText = "ACTIVITIES"
+          activityDetail.appendChild(activityh2)
+
+          for (let singleActivity of activityData) {
+            // console.log("Single Activity", singleActivity)
+            if (singleActivity.city_id === oneCity.id) {
+              
+              let activityName = document.createElement('li')
+              activityName.innerText = singleActivity.name
+              listOfActivity.appendChild(activityName)
+              activityDetail.appendChild(listOfActivity)
+              
+              
+              activityName.addEventListener('click', event => {
+                  
+                  displayActivityPhoto(singleActivity)
+                  singleActivityDetail.appendChild(activityPhoto)
+                  singleActivityDetail.appendChild(activityDescription)
+                  listOfActivity.appendChild(singleActivityDetail)
+                  activityName.appendChild(singleActivityDetail)
+                  
+                })
+
+              
+              
+              }
+            }
+        })
+    }
+
+    function displayActivityPhoto(singleActivity) {
+      //  console.log("photo: ", singleActivity)
+
+      fetch(photosURL)
+      .then(resp => resp.json())
+      .then(photoData => {
+          for (let singlePhotoData of photoData) {
+
+            if (singlePhotoData.activity_id === singleActivity.id) {
+              
+              activityDescription.innerText = singleActivity.description 
+              activityPhoto.src = singlePhotoData.image_url
+
+
+            
+            
+
+            }
+          }
+        })
+    }
+
+    function weatherFetching(oneCity){
+      let cityWeatherApi = `https://api.openweathermap.org/data/2.5/weather?q=${city},ph&appid=edda09851305206e712dc2a0a1f040c9`
+
+      fetch(cityWeatherApi)
+      .then(resp => resp.json())
+      .then(oneWeather => {
+
+
+        let celcius = Math.round(parseFloat(oneWeather.main.temp)-273.15);
+        let fahrenheit = Math.round(((parseFloat(oneWeather.main.temp)-273.15)*1.8)+32); 
+        
+        let desc = document.getElementById('description')
+        let temp = document.getElementById('temp')
+        let loc = document.getElementById('location')
+
+        desc.innerText = oneWeather.weather[0].description
+        temp.innerHTML = fahrenheit + '&deg';
+        loc.innerHTML = oneWeather.name;
+
       })
-   }
-})
+      .catch (error => {
+        console.log(error)
+      })
+      
+    }
+
+    function currencyCalc(oneCity) {
+      fetch(currencyCalcApi)
+      .then(resp => resp.json())
+      .then(cur => {
+
+
+        
+        let PHP = document.getElementById('PHP')
+        let USD = document.getElementById('USD')
+
+        PHP.innerHTML = `PHP: ${cur.rates.PHP}`
+        USD.innerHTML = 'USD: 1'
+
+
+
+
+        
+
+
+
+      })
+    }
+  })
 
 
 
 
 
 
-
-
-// $.getJSON(queryURL, function (data) {
+    
   
-//   var results = data.query.results
-//   var firstResult = results.channel.item.condition
-//   console.log(firstResult);
-  
-//   var location = 'Unknown' // not returned in response
-//   var temp = firstResult.temp
-//   var text = firstResult.text
-  
-//   $('#output').append('The temperature is ' + temp + '. Forecast calls for '+text);
-  
-// })
