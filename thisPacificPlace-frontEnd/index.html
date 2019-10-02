@@ -5,7 +5,7 @@
  <title>this PACIFIC place</title>
  <style>
    img {
-     max-height: 400px;
+     max-height: 250px;
    }
    textarea {
      width: 100%;
@@ -70,30 +70,19 @@
 
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
-          <img src="/Users/andrew-josephblanco/FlatironLabs/Module3/Mod3Project/thisPacificPlace/thisPacificPlace-frontEnd/assets/jeepney.jpg" width="65" height="30" class="d-inline-block align-top" alt="">
-          thisPacificPlace.
+          <img src="/Users/andrew-josephblanco/FlatironLabs/Module3/Mod3Project/thisPacificPlace/thisPacificPlace-frontEnd/assets/islands-of-the-philippines-icon-23423.png" width="50" height="30" class="d-inline-block align-top" alt="">
+          <h3>thisPacificPlace.</h3>
         </a>
     </nav>
   </div>
   <br>
-  <!-- LOGIN -->
-   <div id="container">
-   <form id='login'>
-   <label for="name">NAME :</label>
-   <input type="text" id="name" name="name">
-   <div id="lower">
-   <input type="submit" value="Login">
-   </div><!--/ lower-->
-   </form>
-   </div>
-   <br>
-
-   <!-- video -->
-
-   <header>
-      <div class="overlay"></div>
-      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-        <source src="/Users/andrew-josephblanco/FlatironLabs/Module3/Mod3Project/thisPacificPlace/thisPacificPlace-frontEnd/assets/y2mate.com - philippines_paradise_islands_beaches_dji_phantom_drone_3_4k_osmo_4k_video_aeral_footage_gfl4ZJFbxkE_1080p.mp4" type="video/mp4">
+  
+  <!-- video -->
+  
+  <header>
+    <div class="overlay"></div>
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+      <source src="/Users/andrew-josephblanco/FlatironLabs/Module3/Mod3Project/thisPacificPlace/thisPacificPlace-frontEnd/assets/y2mate.com - philippines_paradise_islands_beaches_dji_phantom_drone_3_4k_osmo_4k_video_aeral_footage_gfl4ZJFbxkE_1080p.mp4" type="video/mp4">
       </video>
       <div class="container h-100">
         <div class="d-flex h-100 text-center align-items-center">
@@ -109,9 +98,9 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 mx-auto">
-
+            
             <!-- INSERT MORE TEXT IN  p TAGS HERE -->
-
+            
             <p class="mb-0">
               
             </p>
@@ -119,7 +108,7 @@
         </div>
       </div>
     </section>
-
+    
     <div class='row'>
       <div class='col-md-4'>
         <ul class="list-group" id="list-group">
@@ -130,10 +119,27 @@
         <h2>City Detail</h2>
         <div id="city-detail">
         </div>
+        <div id="activity-detail">
+          <ul id="list-of-activity">
+            <ul id="single-activity-detail"></ul>
+          </ul>         
+        </div>
       </div>
     </div>
     <script src="src/index.js"></script>
-
- 
-</body>
-</html>
+    
+    <!-- LOGIN -->
+     <div id="container">
+     <form id='login'>
+     <label for="name">NAME :</label>
+     <input type="text" id="name" name="name">
+     <div id="lower">
+     <input type="submit" value="Login">
+     </div><!--/ lower-->
+     </form>
+     </div>
+     <br>
+    
+    
+  </body>
+  </html>
