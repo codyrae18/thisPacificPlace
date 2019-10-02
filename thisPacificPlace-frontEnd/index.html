@@ -5,36 +5,135 @@
  <title>this PACIFIC place</title>
  <style>
    img {
-     max-height: 200px;
+     max-height: 400px;
    }
    textarea {
      width: 100%;
    }
+
+   header {
+    position: relative;
+    background-color: black;
+    height: 75vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  header video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 40%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  }
+  
+  header .container {
+    position: relative;
+    color: antiquewhite;
+    z-index: 2;
+  }
+  
+  header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.2;
+    z-index: 1;
+  }
+  
+  @media (pointer: coarse) and (hover: none) {
+    header {
+      background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+    }
+    header video {
+      display: none;
+    }
+  }
+  
  </style>
 </head>
 <body>
+
+  <!-- Image and text -->
+  <div id="container">
+
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="/Users/andrew-josephblanco/FlatironLabs/Module3/Mod3Project/thisPacificPlace/thisPacificPlace-frontEnd/assets/jeepney.jpg" width="65" height="30" class="d-inline-block align-top" alt="">
+          thisPacificPlace.
+        </a>
+    </nav>
+  </div>
+  <br>
+  <!-- LOGIN -->
    <div id="container">
    <form id='login'>
    <label for="name">NAME :</label>
    <input type="text" id="name" name="name">
    <div id="lower">
-   <input type="checkbox"><label for="checkbox">Keep me logged in</label>
    <input type="submit" value="Login">
    </div><!--/ lower-->
    </form>
    </div>
- <div class='row'>
-   <div class='col-md-4'>
-     <ul class="list-group" id="list-group">
-       <!-- <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle 'fun fact'</button> -->
-     </ul>
-   </div>
-   <div class='col-md-8'>
-     <h2>City Detail</h2>
-     <div id="city-detail">
-     </div>
-   </div>
- </div>
- <script src="src/index.js"></script>
+   <br>
+
+   <!-- video -->
+
+   <header>
+      <div class="overlay"></div>
+      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="/Users/andrew-josephblanco/FlatironLabs/Module3/Mod3Project/thisPacificPlace/thisPacificPlace-frontEnd/assets/y2mate.com - philippines_paradise_islands_beaches_dji_phantom_drone_3_4k_osmo_4k_video_aeral_footage_gfl4ZJFbxkE_1080p.mp4" type="video/mp4">
+      </video>
+      <div class="container h-100">
+        <div class="d-flex h-100 text-center align-items-center">
+          <div class="w-100 text-white">
+            <h1 class="display-3">Visit the Philippines!</h1>
+            <p class="lead mb-0">Mabuhay!</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <section class="my-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+
+            <!-- INSERT MORE TEXT IN  p TAGS HERE -->
+
+            <p class="mb-0">
+              
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class='row'>
+      <div class='col-md-4'>
+        <ul class="list-group" id="list-group">
+          <h2>Top 5 Cities :</h2>
+        </ul>
+      </div>
+      <div class='col-md-8'>
+        <h2>City Detail</h2>
+        <div id="city-detail">
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+
+ 
 </body>
 </html>
