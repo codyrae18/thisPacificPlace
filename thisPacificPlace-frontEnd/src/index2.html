@@ -1,0 +1,161 @@
+<html>
+<head>
+ <meta charset="UTF-8">
+ <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ <link href="https://fonts.googleapis.com/css?family=Montserrat:400,900" rel="stylesheet">
+ <title>this PACIFIC place</title>
+ <style>
+</style>
+
+  <!-- LINK TO STYLESHEET -->
+  <link rel="stylesheet" type="text/css" href="./style.css">
+
+</head>
+<body>
+
+  <!-- IMAGE OF LOGO -->
+  <div id="container">
+
+      <nav class="navbar navbar-light bg-light">
+          <a class="navbar-brand" href="#">
+            <img src="/Users/andrew-josephblanco/FlatironLabs/Module3/Mod3Project/thisPacificPlace/thisPacificPlace-frontEnd/assets/a2ceac49-af76-4b6b-a610-f6c791afbff3.jpeg" width="250" height="75" class="d-inline-block align-top" alt="">
+          </a>
+          <br>
+          <!-- LOGIN -->
+          <br>
+        </nav>
+              <div class="ui input" id="login-form-div">
+                  <form autocomplete="off" id="login-form" class="" action="index.html" method="post">
+                    <h3>Please Login:</h3>
+                    <input id="login-field" type="text" name="" value="" placeholder="Name">
+                    <br><br>
+                    <input type="submit">
+                    <br><br>
+                  </form>
+               </div>
+  </div>
+  <br>
+  
+     
+  
+  <!-- video -->
+  
+  <header>
+    <div class="overlay"></div>
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+      <source src="/Users/andrew-josephblanco/FlatironLabs/Module3/Mod3Project/thisPacificPlace/thisPacificPlace-frontEnd/assets/y2mate.com - philippines_paradise_islands_beaches_dji_phantom_drone_3_4k_osmo_4k_video_aeral_footage_gfl4ZJFbxkE_1080p.mp4" type="video/mp4">
+      </video>
+      <div class="container h-100">
+        <div class="d-flex h-100 text-center align-items-center">
+          <div class="w-100 text-white">
+            <h1 class="display-3">Visit the Philippines!</h1>
+            <p class="lead mb-0">Mabuhay!</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <section class="my-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-30 mx-auto">
+              
+              <!-- INSERT MORE TEXT IN  p TAGS HERE -->
+              <p><h3>The Philippines is defined by its emerald rice fields, teeming megacities, graffiti-splashed jeepneys, smouldering volcanoes, bug-eyed tarsiers, fuzzy water buffalo and smiling, happy-go-lucky people.</h3></p>
+              <p class="mb-0">
+                  
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <br>
+      
+    
+    <script src="src/index.js"></script>
+
+    <!-- Currency Exchange rate -->
+    
+      <div id="money-currency">
+          <h4>Currency Exchange Rate :</h4>
+          <div id="PHP"></div>
+          <div id="USD"></div>
+      </div>
+     <br>
+
+     <!-- top places to visit -->
+     <article>
+     <div class='container'>
+        <h3>Top Places to visit</h3>
+        <br><br>
+      <ul class="list-unstyled">
+        <li class="media">
+            <img src="/Users/andrew-josephblanco/FlatironLabs/Module3/Mod3Project/thisPacificPlace/thisPacificPlace-frontEnd/assets/whitebeach3.jpg" class="mr-2" alt="...">
+            <div class="media-body">
+              <h5 class="mt-0 mb-1">White beach & Mount Luho in Boracay</h5>
+              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
+          </li>
+          <li class="media my-4">
+            <img src="/Users/andrew-josephblanco/FlatironLabs/Module3/Mod3Project/thisPacificPlace/thisPacificPlace-frontEnd/assets/chocolatehills.jpg" class="mr-3" alt="...">
+            <div class="media-body">
+              <h5 class="mt-0 mb-1">Chocolate Hills in Bohol</h5>
+              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
+          </li>
+          <li class="media">
+            <img src="/Users/andrew-josephblanco/FlatironLabs/Module3/Mod3Project/thisPacificPlace/thisPacificPlace-frontEnd/assets/Hinatuan_00.jpg" class="mr-4" alt="...">
+            <div class="media-body">
+              <h5 class="mt-0 mb-1">Enchanted River in Hinatuan</h5>
+              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
+          </li>
+        </ul>
+      </div>
+    </article>
+    
+    <div class='row'>
+        <div class='col-md-4'>
+            <br>
+            <div id="weather">
+                <h3 id="description"></h3>
+                <h1 id="temp"></h1>
+                <h3 id="location"></h3>
+            </div>
+  
+          <ul class="list-group" id="list-group">
+            <h2>Featured Cities :</h2>
+          </ul>
+        </div>
+  
+          <!-- City Info -->
+  
+        <div class='col-md-8'>
+          <h2>City Info </h2>
+          <div id="city-detail">
+          </div>
+          <div id="activity-detail">
+            <ul id="list-of-activity">
+              <ul id="single-activity-detail"></ul>
+            </ul>         
+          </div>
+        </div>
+      </div>
+  
+  
+  
+  
+  
+     
+     
+    
+    <!-- MUSIC BY ODESZA - SUN MODELS -->
+
+     <iframe width="20" height="20" src="https://www.youtube.com/embed/pnSZbl8fTHM?&autoplay=1"
+     frameborder="0" allowfullscreen></iframe>
+  </body>
+  </html>
+
+
+
