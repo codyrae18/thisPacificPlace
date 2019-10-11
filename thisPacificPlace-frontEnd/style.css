@@ -1,0 +1,281 @@
+img {
+    max-height: 545px;
+    }
+  
+header {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1.3em;
+    color: #fff;
+    text-shadow: .1em .1em 0 rgba(0,0,0,0.3);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right top, #99bbcb, #a5c7d7, #b1d4e2, #bde0ee, #c9edfa);
+    }
+
+h1.display-3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 6.9em;
+    text-shadow: .1em .1em 0 rgba(0,0,0,0.3);
+}
+
+h3.definition {
+    margin: 20 auto;
+    border-style: dotted;
+    border-radius: 15px;
+}
+/* body */
+body {
+    margin: 150px;
+    background-color: rgb(255, 255, 255);
+}
+
+
+.fav-button {
+    font-size: 15px;
+    padding-left: 126px;
+    background-color: lightblue; 
+}
+
+.featured-cities {
+    text-align: left;
+    padding-top: 30px;
+    padding-left: 31px;
+}
+
+.my-5 {
+    margin: 0 auto;
+    font-size: 2.2em;
+    font-family: 'Optima';
+    text-align: center;
+    color: rgba(0, 69, 106, 0.687);
+    }
+
+.container-1 {
+    margin: 0 auto;
+    font-size: 1em;
+    font-family: 'Optima';
+    text-align: right;
+    color: rgba(0, 69, 106, 0.687);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    }
+
+
+.navbar {
+    
+    border-bottom: rgb(77, 0, 0) 3px dotted;
+    }
+
+.navbar img {
+    display: block;
+    padding-bottom: 50px;
+}
+.weatherthingy {
+    margin: 0 auto;
+    font-size: 1.0em;
+    font-family: 'Optima';
+    text-align: center;
+    color: rgba(0, 69, 106, 0.687);
+    background-color: lightblue;
+  }
+
+ #weather {
+     float: left;
+     padding-top: 30px;
+     padding-left: 30px;
+ } 
+
+.top-places {
+    margin: auto;
+    font-size: 2.2em;
+    font-family: 'Optima';
+    text-align: center;
+    color: rgba(0, 69, 106, 0.687);
+
+    
+}
+/* this is THE CURRENCY CABRON */
+.currency-cabron {
+    margin: 0 auto;
+    font-size: 2.2em;
+    font-family: 'Optima';
+    color: rgba(0, 69, 106, 0.687);
+    background-color: lightblue;
+
+    padding: 30px;
+    padding-right: 30px;
+    padding-bottom: 150px;
+  }
+
+.cabron {
+    float: right;
+}
+
+
+
+.ui-input {
+    margin: 0 auto;
+    font-size: 20px;
+    font-family: 'Optima';
+    text-align: right;
+    color: rgba(0, 69, 106, 0.687);
+    
+  }
+
+.container {
+    width: 80%;
+}
+
+/* this is the CITY INFO */
+.col-md-8 {
+    margin: auto;
+    width: 50%;
+    text-align: left;
+    color: rgba(0, 69, 106, 0.687);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+
+}
+
+#list-of-activity {
+    font-size: 15px;
+
+}
+#single-activity-detail {
+    width: 700px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+}
+#single-activity-detail img {            
+    width:350px
+}
+/* this is the id for each city */
+.col-md-8 img {
+    width: 210%;
+}
+
+/* this is the CITY LIST */
+
+.col-md-4 li:hover {
+    color: rgb(15, 230, 158);
+}
+.col-md-4 {
+    float: left;
+    padding-top: 25px;
+    font-size: 5vh;
+}
+/* ends here for CITY LIST */
+
+/* ul list LIST unstyled */
+.list-unstyled img{
+    margin: auto;
+
+}
+
+/* this is for the "Top places to visit" */
+.top-places {
+    margin: 0 auto;
+    font-size: 6vh;
+    font-family: 'Optima';
+    text-align: center;
+    color: rgba(0, 69, 106, 0.687);
+    /* padding-top: 15px; */
+    padding-bottom: 15px;
+
+}
+
+/* this is THE CURRENCY CABRON */
+
+
+
+img.mr-4 {
+    max-height: 250px;
+}
+
+img.mr-2 {
+    max-height: 250px;
+}
+
+/* city detail */
+#city-detial-head {
+    color: rgba(0, 69, 106, 0.687);
+}
+#city-detail {
+    color: rgba(0, 69, 106, 0.687);
+}
+
+#city-detail img {
+    margin: auto;
+}
+/* activity detail */
+#activity-detail {
+    color: rgba(0, 69, 106, 0.687);
+}
+#list-of-activites li:hover{
+    color: red;
+}
+
+
+header {
+  position: relative;
+  background-color: black;
+  height: 75vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 40%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+  position: relative;
+  color: antiquewhite;
+  z-index: 2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+@media (pointer: coarse) and (hover: none) {
+  header {
+    background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+  }
+  header video {
+    display: none;
+  }
+}
+#top-places-title{
+margin-right:-140px;
+font-size:40px;
+font-family: sans-serif;
+}
+.list-group{
+    width:150px;
+}
+.list-group-item{
+font-size:20px;
+}
